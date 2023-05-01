@@ -1,0 +1,49 @@
+﻿<Window x:Class="NotaGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotaGUI"
+        xmlns:UserControls="clr-namespace:NotaGUI.Views.UserControls"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        MinHeight="450"  MinWidth="600"
+        Height="450" Width="600">
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#FFD4A373">
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ScrollViewer>
+                <ListBox x:Name="NotesListBox" Background="#FFFEFAE0" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <UserControls:NoteHeadControl />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </ScrollViewer>
+        </Grid>
+        <Button x:Name="AddNewNote" 
+                 
+                HorizontalAlignment="Left" 
+                RenderTransformOrigin="0.404,0.453" 
+                Height="40" Width="140"
+                Click="AddNewNote_Click" VerticalAlignment="Center" Background="#FFFAEDCD" BorderBrush="White" FontFamily="Segoe UI Light" FontSize="16" Foreground="#FF1F1E1E">
+            <TextBlock FontSize="16">
+                Add new note
+            </TextBlock>
+        </Button>
+
+    </Grid>
+</Window>
