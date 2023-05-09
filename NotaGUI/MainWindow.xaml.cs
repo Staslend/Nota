@@ -30,7 +30,7 @@ namespace NotaGUI
         /// List of all notes that are available 
         /// </summary>
         public List<Note> NoteLis;
-
+        NotaDataLibrary.DataAccess.NoteContext nc = new NotaDataLibrary.DataAccess.NoteContext();
         public MainWindow()
         {
             InitializeComponent();
@@ -53,22 +53,15 @@ namespace NotaGUI
         /// </summary>
         public void UpdateNoteList()
         {
-            using (NotaDataLibrary.DataAccess.NoteContext nc = new NotaDataLibrary.DataAccess.NoteContext())
-            {
                 NoteLis = nc.Notes.ToList();
                 this.NotesListBox.ItemsSource = NoteLis;
-            }
         }
 
         /// <summary>
         /// Add new note to database and to the list plus opening a new note editor
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void AddNewNote_Click(object sender, RoutedEventArgs e)
         {
-            using (NotaDataLibrary.DataAccess.NoteContext nc = new NotaDataLibrary.DataAccess.NoteContext())
-            {
                 Note n = new Note();
 
                 nc.Notes.Add(n);
@@ -79,7 +72,6 @@ namespace NotaGUI
                 noteEditWindow.Show();
 
                 UpdateNoteList();
-            }
         }
     }
 }

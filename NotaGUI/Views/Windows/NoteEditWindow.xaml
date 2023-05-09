@@ -6,31 +6,35 @@
         xmlns:local="clr-namespace:NotaGUI.Views.Windows"
         mc:Ignorable="d"
         Title="NoteEditWindow" Height="600" Width="800">
-    <Grid Margin="10">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" >
+        <Grid Grid.Row="0" Background="#FFD4A373" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <Button x:Name="SaveNoteTextButton" Content="Save" Click="SaveNoteTextButton_Click"/>
+                <Button x:Name="SaveNoteTextButton" Content="Save" Click="SaveNoteTextButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="40" IsDefault="True" Background="#FFFAEDCD" FontFamily="Yu Gothic Light" FontSize="22" FontWeight="Bold" BorderThickness="0,0,1,1" BorderBrush="#FFFFAE36"/>
             </Grid>
 
 
             <Grid Grid.Column="1">
-                <TextBox x:Name="SubjectField" FontSize="25"/>
+                <TextBox x:Name="SubjectField" FontSize="25" Background="#FFE9EDC9" VerticalAlignment="Center" Margin="0,-1,5,0" BorderThickness="1,1,0,1"/>
             </Grid>
 
         </Grid>
-    
-        <Grid Grid.Row="1">
-            <TextBox x:Name="TextField" FontSize="25" />
+
+        <Grid Grid.Row="1" Background="#FFE9EDC9">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="11*"/>
+                <ColumnDefinition Width="19*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="TextField" AcceptsReturn="True" FontSize="25" AcceptsTab="True" TextWrapping="Wrap" Background="#FFE9EDC9" Grid.ColumnSpan="2"  Margin="10" BorderThickness="0,0,0,0"/>
         </Grid>
 
     </Grid>

@@ -39,7 +39,7 @@
                 HorizontalAlignment="Left" 
                 RenderTransformOrigin="0.404,0.453" 
                 Height="40" Width="140"
-                Click="AddNewNote_Click" VerticalAlignment="Center" Background="#FFFAEDCD" BorderBrush="White" FontFamily="Segoe UI Light" FontSize="16" Foreground="#FF1F1E1E">
+                Click="AddNewNote_Click" VerticalAlignment="Center" Background="#FFFAEDCD" BorderBrush="White" FontFamily="Segoe UI Light" FontSize="16" Foreground="#FF1F1E1E" Margin="5,0,0,0" BorderThickness="0,0,0,0">
             <TextBlock FontSize="16">
                 Add new note
             </TextBlock>
