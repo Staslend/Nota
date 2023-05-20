@@ -23,27 +23,23 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <ScrollViewer>
-                <ListBox x:Name="NotesListBox" Background="#FFFEFAE0" >
+                <ListBox x:Name="NotesListBox" Background="#FFFEFAE0" ItemsSource="{Binding NoteList}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <UserControls:NoteHeadControl />
+                            <UserControls:NoteItemControl 
+                                DeleteCommand="{Binding DataContext.DeleteNoteCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"  
+                                OpenEditWindowCommand="{Binding DataContext.OpenEditWindowCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"
+                                />
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-
-            </ScrollViewer>
         </Grid>
         <Button x:Name="AddNewNote" 
-                 
+                Content="Add new note"
+                Command="{Binding AddNewNoteCommand}"
                 HorizontalAlignment="Left" 
                 RenderTransformOrigin="0.404,0.453" 
                 Height="40" Width="140"
-                Click="AddNewNote_Click" VerticalAlignment="Center" Background="#FFFAEDCD" BorderBrush="White" FontFamily="Segoe UI Light" FontSize="16" Foreground="#FF1F1E1E" Margin="5,0,0,0" BorderThickness="0,0,0,0">
-            <TextBlock FontSize="16">
-                Add new note
-            </TextBlock>
-        </Button>
-
+                VerticalAlignment="Center" Background="#FFFAEDCD" BorderBrush="White" FontFamily="Segoe UI Light" FontSize="16" Foreground="#FF1F1E1E" Margin="5,0,0,0" BorderThickness="0,0,0,0"/>
     </Grid>
 </Window>
